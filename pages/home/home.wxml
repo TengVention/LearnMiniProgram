@@ -3,4 +3,4 @@
 <button size="mini">按钮</button>
 
 <view>1.知识点2</view>
-<view>呵呵呵呵</view>
+<view bindtap="handlerViewClick">呵呵呵呵</view>
