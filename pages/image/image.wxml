@@ -1,0 +1,23 @@
+<!--pages/image/image.wxml-->
+<!-- image使用 -->
+<!-- 
+  1.image组件可以写成单标签，也可以写成双标签 
+  2.image组件默认有自己的大小;
+  3.image组件是一个行内块级元素
+-->
+<!-- <image/> -->
+
+<!-- 2.src：本地地址/远程地址 -->
+<image src="http://oa.gbscm.cc/static/images/avatar/0.png"/>
+
+<button bindtap="handleChooseAlbum">选择图片</button>
+<image src="{{imagePath}}" />
+
+<!-- 3.bindload 监听图片加载完成 -->
+<image wx:for="{{1}}" src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1593106255,4245861836&fm=26&gp=0.jpg" 
+      bindload="handleImageLoad"
+      lazy-load />
+
+<!-- 4.show-menu-by-longpress 长安图片出现识别小程序 -->
+<image show-menu-by-longpress='true' src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1593106255,4245861836&fm=26&gp=0.jpg"/>
+<!-- 懒加载 lazy -->
