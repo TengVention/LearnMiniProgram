@@ -1,3 +1,5 @@
 <!--pages/home/home.wxml-->
-<text class="title">pages/home/home.wxml</text>
-<button size="mini">按钮</button>
+<text id="content" class="title">pages/home/home.wxml</text>
+<button id="" size="mini">按钮</button>
+<view></view>
+<scroll-view id=""></scroll-view>
