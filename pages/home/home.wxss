@@ -3,3 +3,15 @@
   color: red;
   font-size: 30px;
 }
+
+.content{
+  font-size: 36rpx;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
