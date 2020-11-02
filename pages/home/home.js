@@ -1,4 +1,6 @@
 // pages/home/home.js
+import request from '../../service/network.js'
+
 Page({
 
   /**
@@ -12,55 +14,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //1.原生的方式发送网络请求
+    this.get_data_option()
 
+    //2.使用封装的request发送网络请求
+    //Promise最大的好处就是防止出现回调地狱
+    request({
+      url: 'http://httpbin.org/post',
+      method: 'POST'
+    }).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  get_data_option: function() {
+    wx.request({
+      url: 'http://httpbin.org/post',
+      method: 'POST',
+      data: {
+        name: 'dwc',
+        age: 18
+      },
+      success: function (res) {
+        console.log(res)
+      }
+    })
   }
 })
